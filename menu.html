@@ -17,8 +17,8 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background: #FDFBF7; /* Cream Lembut */
-      color: #4A3728; /* Coklat Gelap */
+      background: #FDFBF7;
+      color: #4A3728;
       line-height: 1.7;
       overflow-x: hidden;
     }
@@ -32,7 +32,6 @@
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    @keyframes blink { 50% { opacity: 0; } }
 
     /* --- 2. HEADER --- */
     .header {
@@ -74,6 +73,7 @@
     .clock-time-wrap { display: flex; align-items: center; gap: 8px; }
     .h-time { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 600; color: #4A3728; line-height: 1; }
     .h-dot { width: 6px; height: 6px; background: #2D8A4E; border-radius: 50%; animation: blink 2s infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
     .h-date { font-size: 11px; color: #C2A382; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
 
     /* --- 3. MENU SECTION STYLES --- */
@@ -88,7 +88,6 @@
       font-style: italic; color: #2D241E;
     }
     
-    /* FILTER BUTTONS */
     .menu-filter {
       text-align: center; margin-bottom: 50px; margin-top: 30px;
       display: flex; justify-content: center; flex-wrap: wrap; gap: 15px;
@@ -105,14 +104,12 @@
       background: #4A3728; color: #fff; border-color: #4A3728; transform: translateY(-2px);
     }
 
-    /* GRID LAYOUT */
     .menu-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
       gap: 30px;
     }
 
-    /* MENU CARD */
     .menu-card {
       background: #fff; border: 1px solid #EEE5D8; border-radius: 20px;
       overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;
@@ -145,7 +142,6 @@
       background: #F3EFE9; color: #4A3728; font-weight: 600; font-size: 12px;
       text-transform: uppercase; transition: 0.3s; margin-top: auto;
     }
-
     .add-cart:hover { background: #4A3728; color: #fff; }
 
     /* --- 4. CHECKOUT UI --- */
@@ -164,8 +160,18 @@
     }
     .cart-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
     .cart-table th { text-align: left; padding-bottom: 15px; color: #8C7867; font-size: 12px; text-transform: uppercase; border-bottom: 1px solid #eee; }
-    .cart-table td { padding: 15px 0; border-bottom: 1px solid #f9f9f9; font-size: 14px; color: #5d4d41; }
+    .cart-table td { padding: 15px 0; border-bottom: 1px solid #f9f9f9; font-size: 14px; color: #5d4d41; vertical-align: middle; }
     .cart-table td:last-child { text-align: right; font-weight: bold; }
+    
+    /* Tombol Quantity Kecil */
+    .qty-btn {
+      width: 25px; height: 25px; border-radius: 50%; border: 1px solid #D6C7B6;
+      background: #fff; color: #4A3728; font-weight: bold; font-size: 14px;
+      cursor: pointer; transition: 0.2s;
+    }
+    .qty-btn:hover { background: #4A3728; color: #fff; }
+    .qty-wrap { display: flex; align-items: center; justify-content: center; gap: 8px; }
+
     .remove-btn { color: #d9534f; border: none; background: none; font-size: 18px; margin-left: 10px; cursor: pointer; }
 
     /* Right: Payment Details */
@@ -186,7 +192,6 @@
       background: #4A3728; color: white; border-color: #4A3728;
     }
 
-    /* QR CODE */
     #qr-section {
         display: none; text-align: center; background: #fff;
         padding: 20px; border-radius: 15px; margin-bottom: 20px;
@@ -223,7 +228,6 @@
     .footer-brand h4 { font-family: 'Playfair Display', serif; font-size: 24px; color: #C2A382; margin-bottom: 15px;}
     .footer-brand p { color: #D6C7B6; font-size: 14px; max-width: 300px; }
     
-    /* Social Icons */
     .social-icons { display: flex; gap: 15px; margin-top: 25px; }
     .social-icons a {
       width: 40px; height: 40px; border-radius: 50%;
@@ -297,7 +301,6 @@
   </div>
 
   <div class="menu-grid">
-    
     <div class="menu-card coffee">
       <img src="image/latte.jpg" alt="Latte">
       <div class="card-info">
@@ -306,7 +309,6 @@
         <button class="add-cart" data-name="Latte" data-price="12">Add to cart</button>
       </div>
     </div>
-
     <div class="menu-card coffee">
       <img src="image/americano.jpg" alt="Americano">
       <div class="card-info">
@@ -315,7 +317,6 @@
         <button class="add-cart" data-name="Americano" data-price="10">Add to cart</button>
       </div>
     </div>
-
     <div class="menu-card coffee">
       <img src="image/cappucino.jpg" alt="Cappuccino">
       <div class="card-info">
@@ -324,7 +325,6 @@
         <button class="add-cart" data-name="Cappuccino" data-price="13">Add to cart</button>
       </div>
     </div>
-
     <div class="menu-card coffee">
       <img src="image/mocha.jpg" alt="Mocha">
       <div class="card-info">
@@ -333,7 +333,6 @@
         <button class="add-cart" data-name="Mocha" data-price="12">Add to cart</button>
       </div>
     </div>
-
     <div class="menu-card coffee">
       <img src="image/butterscotch.jpg" alt="Butterscotch">
       <div class="card-info">
@@ -342,7 +341,6 @@
         <button class="add-cart" data-name="Butterscotch" data-price="13">Add to cart</button>
       </div>
     </div>
-
     <div class="menu-card coffee">
       <img src="image/hazelnut.jpg" alt="Hazelnut">
       <div class="card-info">
@@ -360,7 +358,6 @@
         <button class="add-cart" data-name="Smoothie Chocolate" data-price="10">Add to cart</button>
       </div>
     </div>
-
     <div class="menu-card non-coffee">
       <img src="image/milkshake.jpg" alt="Smoothie Indulgence">
       <div class="card-info">
@@ -369,7 +366,6 @@
         <button class="add-cart" data-name="Smoothie Indulgence" data-price="10">Add to cart</button>
       </div>
     </div>
-
     <div class="menu-card non-coffee">
       <img src="image/strawberry.jpg" alt="Smoothie Strawberry">
       <div class="card-info">
@@ -378,7 +374,6 @@
         <button class="add-cart" data-name="Smoothie Strawberry" data-price="10">Add to cart</button>
       </div>
     </div>
-
     <div class="menu-card non-coffee">
       <img src="image/smoothie1.jpg" alt="Smoothie Banana">
       <div class="card-info">
@@ -387,7 +382,6 @@
         <button class="add-cart" data-name="Smoothie Banana" data-price="10">Add to cart</button>
       </div>
     </div>
-
     <div class="menu-card non-coffee">
       <img src="image/lemontea.jpg" alt="Lemon Tea">
       <div class="card-info">
@@ -396,7 +390,6 @@
         <button class="add-cart" data-name="Lemon Tea" data-price="7">Add to cart</button>
       </div>
     </div>
-
     <div class="menu-card non-coffee">
       <img src="image/matcha.jpg" alt="Matcha">
       <div class="card-info">
@@ -405,7 +398,6 @@
         <button class="add-cart" data-name="Matcha" data-price="12">Add to cart</button>
       </div>
     </div>
-
     <div class="menu-card non-coffee">
       <img src="image/applejus.jpg" alt="Juice Apple">
       <div class="card-info">
@@ -423,7 +415,6 @@
         <button class="add-cart" data-name="Croissant" data-price="8">Add to cart</button>
       </div>
     </div>
-
     <div class="menu-card dessert">
       <img src="image/waffle.jpg" alt="Waffle">
       <div class="card-info">
@@ -432,7 +423,6 @@
         <button class="add-cart" data-name="Waffle" data-price="8">Add to cart</button>
       </div>
     </div>
-
     <div class="menu-card dessert">
       <img src="image/pancake.jpg" alt="Pancake">
       <div class="card-info">
@@ -441,7 +431,6 @@
         <button class="add-cart" data-name="Pancake" data-price="8">Add to cart</button>
       </div>
     </div>
-
     <div class="menu-card dessert">
       <img src="image/mantau.jpg" alt="Spicy Creamy Clam">
       <div class="card-info">
@@ -450,7 +439,6 @@
         <button class="add-cart" data-name="Spicy Creamy Clam" data-price="28">Add to cart</button>
       </div>
     </div>
-
     <div class="menu-card dessert">
       <img src="image/beef.jpg" alt="Croissant Beef">
       <div class="card-info">
@@ -459,7 +447,6 @@
         <button class="add-cart" data-name="Croissant Beef" data-price="18">Add to cart</button>
       </div>
     </div>
-
     <div class="menu-card dessert">
       <img src="image/peach1.jpg" alt="Peach Strudel">
       <div class="card-info">
@@ -468,7 +455,6 @@
         <button class="add-cart" data-name="Peach Strudel" data-price="12">Add to cart</button>
       </div>
     </div>
-
     <div class="menu-card dessert">
       <img src="image/takoyaki.jpg" alt="Takoyaki">
       <div class="card-info">
@@ -486,7 +472,6 @@
         <button class="add-cart" data-name="Spaghetti Carbonara" data-price="18">Add to cart</button>
       </div>
     </div>
-
     <div class="menu-card western">
       <img src="image/bologneese.jpg" alt="Spaghetti Bolognese">
       <div class="card-info">
@@ -495,7 +480,6 @@
         <button class="add-cart" data-name="Spaghetti Bolognese" data-price="18">Add to cart</button>
       </div>
     </div>
-
     <div class="menu-card western">
       <img src="image/aglio.jpg" alt="Spaghetti Aglio Olio">
       <div class="card-info">
@@ -504,7 +488,6 @@
         <button class="add-cart" data-name="Spaghetti Aglio Olio" data-price="18">Add to cart</button>
       </div>
     </div>
-
     <div class="menu-card western">
       <img src="image/chickengril.jpg" alt="Chicken Grill">
       <div class="card-info">
@@ -513,7 +496,6 @@
         <button class="add-cart" data-name="Chicken Grill" data-price="18">Add to cart</button>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -602,7 +584,7 @@
 </footer>
 
 <script>
-  // --- 1. JAM HEADER LOGIC ---
+  // --- 1. JAM HEADER ---
   function updateClock() {
     const now = new Date();
     let hours = now.getHours();
@@ -618,7 +600,7 @@
   setInterval(updateClock, 1000); 
   updateClock(); 
 
-  // --- 2. MENU FILTER LOGIC ---
+  // --- 2. MENU FILTER ---
   const filterBtns = document.querySelectorAll('.filter-btn');
   const menuCards = document.querySelectorAll('.menu-card');
 
@@ -637,12 +619,11 @@
     });
   });
 
-  // --- 3. PAYMENT METHOD SELECTION ---
+  // --- 3. PAYMENT METHOD ---
   function selectPay(element, type) {
     document.querySelectorAll('.pay-option').forEach(el => el.classList.remove('selected'));
     element.classList.add('selected');
 
-    // Handle QR Visibility
     const qrSection = document.getElementById('qr-section');
     if (type === 'qr') {
         qrSection.style.display = 'block';
@@ -651,7 +632,7 @@
     }
   }
 
-  // --- 4. CART LOGIC ---
+  // --- 4. CART LOGIC (WITH PLUS & MINUS) ---
   const cartItemsContainer = document.getElementById('cart-items');
   const emptyMsg = document.getElementById('empty-msg');
   const subtotalEl = document.getElementById('subtotal');
@@ -673,7 +654,6 @@
       }
       updateCartUI();
       
-      // SweetAlert Toast Notification
       const Toast = Swal.mixin({
         toast: true,
         position: 'top-end',
@@ -707,7 +687,15 @@
       const row = document.createElement('tr');
       row.innerHTML = `
         <td>${item.name}</td>
-        <td style="text-align:center;">x${item.qty}</td>
+        
+        <td style="text-align:center;">
+          <div class="qty-wrap">
+            <button class="qty-btn" onclick="changeQty(${index}, -1)">-</button>
+            <span>${item.qty}</span>
+            <button class="qty-btn" onclick="changeQty(${index}, 1)">+</button>
+          </div>
+        </td>
+
         <td style="text-align:right;">RM ${(item.price * item.qty).toFixed(2)}</td>
         <td style="text-align:right;">
           <button class="remove-btn" onclick="removeItem(${index})">&times;</button>
@@ -724,12 +712,23 @@
     finalTotalEl.innerText = 'RM ' + total.toFixed(2);
   }
 
+  // FUNGSI BARU UNTUK UBAH QUANTITY
+  function changeQty(index, change) {
+    cart[index].qty += change;
+
+    // Kalau qty jadi 0, buang terus
+    if (cart[index].qty <= 0) {
+      cart.splice(index, 1);
+    }
+    updateCartUI();
+  }
+
   function removeItem(index) {
     cart.splice(index, 1);
     updateCartUI();
   }
 
-  // --- 5. CHECKOUT LOGIC (SweetAlert Popup) ---
+  // --- 5. CHECKOUT LOGIC ---
   document.querySelector('.btn-checkout').addEventListener('click', () => {
       
       if (cart.length === 0) {
@@ -742,7 +741,6 @@
         return;
       }
 
-      // Check method selected
       const selectedMethod = document.querySelector('.pay-option.selected').innerText;
 
       Swal.fire({
